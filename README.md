@@ -39,14 +39,14 @@ Source :
 
 4. `sudo apt-get install -y mongodb-org`
 
-## Start
+### Start
 `sudo service mongod start`
 
-## Check Log
+### Check Log
 `/var/log/mongodb/mongod.log`
 
-## Stop
+### Stop
 `sudo service mongod stop`
 
-## Restart
+### Restart
 `sudo service mongod restart`
