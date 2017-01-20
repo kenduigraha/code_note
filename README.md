@@ -55,3 +55,9 @@ Source :
 Download : [https://www.apachefriends.org/download.html](https://www.apachefriends.org/download.html)
 
 Install : [https://www.apachefriends.org/faq_linux.html](https://www.apachefriends.org/faq_linux.html)
+
+### Start
+`sudo /opt/lampp/lampp start`
+
+### Stop
+`sudo /opt/lampp/lampp stop`
