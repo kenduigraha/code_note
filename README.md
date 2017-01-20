@@ -1,4 +1,5 @@
-# note_code
+# code_note
+This repository belongs to my personal guidance note to download & install "things" that i needed in Ubuntu 16.04
 
 # npm & node.js (Ubuntu)
 Source :
