@@ -50,3 +50,8 @@ Source :
 
 ### Restart
 `sudo service mongod restart`
+
+# XAMPP
+Download : [https://www.apachefriends.org/download.html](https://www.apachefriends.org/download.html)
+
+Install : [https://www.apachefriends.org/faq_linux.html](https://www.apachefriends.org/faq_linux.html)
