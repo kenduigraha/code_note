@@ -62,3 +62,25 @@ Install : [https://www.apachefriends.org/faq_linux.html](https://www.apachefrien
 
 ### Stop
 `sudo /opt/lampp/lampp stop`
+
+# Tree 
+### Install
+`sudo apt install tree`
+
+### How to use
+`tree`
+
+2 Depths
+`tree -L 2`
+
+Only folders/directories
+`tree -d`
+
+Ignore file or folder
+`tree -I <file name || folder name >`
+
+Show hidden files
+`tree -a`
+
+Run how to use tree
+`man tree`
