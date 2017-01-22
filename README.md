@@ -52,6 +52,9 @@ Source :
 ### Restart
 `sudo service mongod restart`
 
+## Query mongodb
+`COMING SOON`
+
 # XAMPP
 Download : [https://www.apachefriends.org/download.html](https://www.apachefriends.org/download.html)
 
@@ -322,7 +325,6 @@ module.exports = {
 };
 
 ```
-
 migrate:
 `sequelize db:migrate`
 
