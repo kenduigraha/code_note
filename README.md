@@ -142,3 +142,44 @@ OR
 then
 
 create new file name server.js or app.js and do magic there
+
+# PostgreSQL
+Source :
+[https://www.postgresql.org/download/linux/ubuntu/](https://www.postgresql.org/download/linux/ubuntu/)
+
+Install :
+`sudo apt install postgresql`
+
+## PgAdmin 4.1.1
+
+```
+sudo apt-get install virtualenv python-pip libpq-dev python-dev
+
+cd
+virtualenv pgadmin4
+cd pgadmin4
+source bin/activate
+
+wget https://ftp.postgresql.org/pub/pgadmin3/pgadmin4/v1.1/pip/pgadmin4-1.1-py2-none-any.whl
+
+pip install pgadmin4-1.1-py2-none-any.whl
+
+gedit lib/python2.7/site-packages/pgadmin4/config_local.py
+
+Configure
+
+Write the following in lib/python2.7/site-packages/pgadmin4/config_local.py to configure to run in single-user mode:
+
+SERVER_MODE = False
+
+Create the configuration database
+
+python lib/python2.7/site-packages/pgadmin4/setup.py
+
+Run
+
+python lib/python2.7/site-packages/pgadmin4/pgAdmin4.py
+Access at http://localhost:5050
+```
+
+## ORM : Sequelize
