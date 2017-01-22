@@ -180,6 +180,198 @@ Run
 
 python lib/python2.7/site-packages/pgadmin4/pgAdmin4.py
 Access at http://localhost:5050
+
+setting password :
+http://stackoverflow.com/questions/24917832/how-connect-postgres-to-localhost-server-using-pgadmin-on-ubuntu
 ```
 
+## pg
+
+`sudo npm i -g pg`
+
 ## ORM : Sequelize
+`sudo npm i -g sequelize-cli`
+
+`sudo npm i -g sequelize`
+
+go to your project's directory
+
+`sequelize init`
+
+go to pgadmin, create new database
+
+edit config/config.json, username, password, database, dialect
+
+example :
+```
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "db_user_skills",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "db_user_skills",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "db_user_skills",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
+
+```
+
+create new table, run in terminal
+
+`sequelize model:create --name <table_name> --attributes "<field>:<data_type>,<field>:<data_type>,etc"`
+
+migrate
+
+`sequelize db:migrate`
+
+seeders
+`sequelize seed:create --name <file_seeder_name>`
+
+edit seeder's file
+
+example:
+```javascript
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    /*
+      Add altering commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.bulkInsert('Person', [{
+        name: 'John Doe',
+        isBetaMember: false
+      }], {});
+    */
+    return queryInterface.bulkInsert('Users', [{
+      username  : 'admin',
+      password  : 'admin',
+      email     : 'admin@admin.com',
+      createdAt : new Date(),
+      updatedAt : new Date()
+    }])
+  },
+
+  down: function (queryInterface, Sequelize) {
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.bulkDelete('Person', null, {});
+    */
+    return queryInterface.bulkDelete('Users', null)
+  }
+};
+
+```
+
+execute the seeder
+`sequelize db:seed --seed seeders/<file_seeder_name>.js`
+
+add new field into existing table
+`sequelize migration:create --name <file_new_field_name>`
+
+
+edit the file_new_field_name :
+
+example:
+```javascript
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    /*
+      Add altering commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
+    */
+    return queryInterface.addColumn('Skills', 'name', {
+      type : Sequelize.STRING
+    })
+  },
+
+  down: function (queryInterface, Sequelize) {
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.dropTable('users');
+    */
+    return queryInterface.removeColumn('Skills', 'name')
+  }
+};
+
+```
+
+migrate:
+`sequelize db:migrate`
+
+add FK
+`sequelize migration:create --name <file_add_FK_name>`
+
+edit file_add_FK_name
+example:
+```javascript
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    /*
+      Add altering commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
+    */
+    return queryInterface.addColumn(
+      'Skills',
+      'UserId',
+      {
+        type: Sequelize.INTEGER,
+        references :{
+            model : 'Users',
+            key: 'id'
+        },
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE'
+      }
+    )
+  },
+
+  down: function (queryInterface, Sequelize) {
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.dropTable('users');
+    */
+    return queryInterface.removeColumn('Skills','UserId')
+  }
+};
+
+```
+
+migrate:
+
+`sequelize db:migrate`
