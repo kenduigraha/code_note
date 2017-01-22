@@ -63,7 +63,7 @@ Install : [https://www.apachefriends.org/faq_linux.html](https://www.apachefrien
 ### Stop
 `sudo /opt/lampp/lampp stop`
 
-# Tree 
+# Tree
 ### Install
 `sudo apt install tree`
 
@@ -84,3 +84,61 @@ Show hidden files
 
 Run how to use tree
 `man tree`
+
+# Express.js
+Source :
+[http://expressjs.com/](http://expressjs.com/)
+
+How to
+#### 1. Create & go to new folder
+`mkdir new_folder`
+`cd new_folder`
+
+#### 2. Npm init
+`npm init`
+or
+`npm init -y`
+
+#### 3. Install express
+##### Generator :
+`sudo npm i -g express-generator`
+
+then
+
+`express`
+(Only if you want to install in that directory with jade template engine (default))
+
+OR
+
+`express --view=<name_template_engine>`
+
+```
+name_template_engine :
+- ejs
+- pug
+- hbs
+- hogan
+```
+
+then
+
+`npm install`
+
+then
+
+`npm start`
+
+check in browser :
+`localhost:3000`
+
+
+OR
+
+
+
+##### Scratch :
+`npm i -S express`
+
+then
+
+create new file name server.js or app.js and do magic there
