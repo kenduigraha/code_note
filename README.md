@@ -378,7 +378,22 @@ migrate:
 
 `sequelize db:migrate`
 
+## Docker
 
-## Mongoose 
+### How To Install
+[https://docs.docker.com/engine/installation/linux/ubuntu/](https://docs.docker.com/engine/installation/linux/ubuntu/)
+
+[http://stackoverflow.com/questions/39645118/docker-unable-to-locate-package-docker-engine](http://stackoverflow.com/questions/39645118/docker-unable-to-locate-package-docker-engine)
+
+### Docker Compose
+[https://docs.docker.com/compose/](https://docs.docker.com/compose/)
+[https://docs.docker.com/engine/installation/linux/ubuntu/](https://docs.docker.com/engine/installation/linux/ubuntu/)
+[https://github.com/docker/compose/releases](https://github.com/docker/compose/releases)
+
+### Laradock
+[https://github.com/laradock/laradock](https://github.com/laradock/laradock)
+
+
+## Mongoose
 
 ## Sequelize
