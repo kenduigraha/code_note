@@ -393,6 +393,11 @@ migrate:
 ### Laradock
 [https://github.com/laradock/laradock](https://github.com/laradock/laradock)
 
+## Laravel
+[https://www.rosehosting.com/blog/install-laravel-on-ubuntu-16-04/](https://www.rosehosting.com/blog/install-laravel-on-ubuntu-16-04/)
+
+## phpmyadmin
+`Include /etc/phpmyadmin/apache.conf` in /etc/apache2/apache2.conf
 
 ## Mongoose
 
