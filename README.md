@@ -400,5 +400,8 @@ migrate:
 `Include /etc/phpmyadmin/apache.conf` in /etc/apache2/apache2.conf
 
 ## Mongoose
-
+`Soon`
 ## Sequelize
+`Soon`
+## golang
+`Soon`
